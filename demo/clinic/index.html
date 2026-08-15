@@ -78,8 +78,8 @@ header{background:var(--card);border-bottom:1px solid var(--line);position:stick
 }
 .opt:hover{border-color:#c7d2de}
 .opt[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
-.opt .t{font-weight:600;font-size:15px}
-.opt .d{color:var(--muted);font-size:13px;margin-top:2px}
+.opt .t{display:block;font-weight:600;font-size:15px}
+.opt .d{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .opt .price{font-weight:700;white-space:nowrap;font-size:15px}
 
 /* slots */
@@ -288,7 +288,7 @@ const I18N = {
     v2t:"No double bookings", v2p:"A slot disappears the moment it's taken. One calendar, no conflicts.",
     v3t:"Fewer no-shows", v3p:"Deposits and automatic reminders. Cancellations free the slot for someone else.",
     footTag:"Websites, online stores and booking systems in Kuwait — Arabic and English.",
-    min:"min", closedDay:"Closed — Friday", pick:"Pick a day above to see available times."
+    min:"min", kd:"KD", closedDay:"Closed — Friday", pick:"Pick a day above to see available times."
   },
   ar:{
     demoBar:"نموذج حي — نظام حجز لعيادة كويتية. من تنفيذ تك لابس.",
@@ -311,7 +311,7 @@ const I18N = {
     v2t:"لا تعارض مواعيد", v2p:"الموعد يختفي لحظة ما ينحجز. تقويم واحد، بدون تضارب.",
     v3t:"غياب أقل", v3p:"عربون وتذكيرات تلقائية. والإلغاء يحرّر الموعد لشخص ثاني.",
     footTag:"مواقع ومتاجر إلكترونية وأنظمة حجز في الكويت — بالعربية والإنجليزية.",
-    min:"دقيقة", closedDay:"مغلق — الجمعة", pick:"اختر يوماً من الأعلى لعرض الأوقات المتاحة."
+    min:"دقيقة", kd:"د.ك", closedDay:"مغلق — الجمعة", pick:"اختر يوماً من الأعلى لعرض الأوقات المتاحة."
   }
 };
 
@@ -358,7 +358,7 @@ function renderServices(){
     b.className="opt"; b.type="button";
     b.setAttribute("aria-pressed", sel.svc===s.id);
     b.innerHTML = `<span><span class="t">${s[lang][0]}</span><span class="d">${s[lang][1]} · ${s.mins} ${I18N[lang].min}</span></span>
-                   <span class="price">${s.price} KD</span>`;
+                   <span class="price">${s.price} ${I18N[lang].kd}</span>`;
     b.onclick=()=>{ sel.svc=s.id; renderServices(); next1.disabled=false; };
     box.appendChild(b);
   });
@@ -434,7 +434,7 @@ function renderSummary(){
     <div class="row"><span>${t.sService}</span><span>${s[lang][0]}</span></div>
     <div class="row"><span>${t.sWhen}</span><span>${dateStr}</span></div>
     <div class="row"><span>${t.sDuration}</span><span>${s.mins} ${t.min}</span></div>
-    <div class="row"><span>${t.sTotal}</span><span>${s.price} KD</span></div>
+    <div class="row"><span>${t.sTotal}</span><span>${s.price} ${t.kd}</span></div>
     <div class="row"><span>${t.sRef}</span><span>${ref}</span></div>`;
 }
 
