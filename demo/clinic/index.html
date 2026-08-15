@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nabd Clinic — Online Booking Demo | Tech Labs</title>
+<meta name="description" content="A working bilingual online booking demo for a Kuwaiti clinic. Built by Tech Labs — techlabskw.com">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1720; --muted:#5f6b7a; --line:#e4e9ef; --bg:#f7f9fb; --card:#fff;
+  --brand:#0f6b5c; --brand-soft:#e8f4f1; --brand-dark:#0b5145;
+  --tl-blue:#1f6dff; --tl-dark:#070b12;
+  --ok:#10794f; --warn:#8a6d1f;
+  --r:14px; --shadow:0 1px 2px rgba(15,23,32,.05), 0 8px 28px rgba(15,23,32,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+html[dir="rtl"] body{font-family:Cairo,system-ui,sans-serif}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px}
+
+/* demo ribbon */
+.demo-bar{
+  background:var(--tl-dark); color:#fff; font-size:13px; padding:9px 0;
+}
+.demo-bar .wrap{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.demo-bar b{color:#8fc0ff;font-weight:600}
+.demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
+/* header */
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.dot{width:38px;height:38px;border-radius:11px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700;flex:none;font-size:15px}
+.brand h1{font-size:17px;margin:0;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.brand span{display:block;font-size:12px;color:var(--muted);font-weight:400}
+.langs{display:flex;gap:6px;align-items:center;flex:none}
+.langs button{
+  border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 13px;
+  cursor:pointer;font:inherit;font-size:13px;font-weight:600;color:var(--muted);
+}
+.langs button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+
+/* hero */
+.hero{padding:36px 0 8px}
+.hero h2{font-size:clamp(24px,4.4vw,34px);line-height:1.2;margin:0 0 10px;letter-spacing:-.02em}
+.hero p{color:var(--muted);margin:0;max-width:60ch}
+
+/* steps */
+.steps{display:flex;gap:8px;padding:22px 0 6px;flex-wrap:wrap}
+.step{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.step i{width:23px;height:23px;border-radius:50%;background:#e9edf2;color:var(--muted);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700;flex:none}
+.step.on{color:var(--ink);font-weight:600}
+.step.on i{background:var(--brand);color:#fff}
+.step.done i{background:var(--brand-soft);color:var(--brand)}
+
+/* card */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:22px;margin:14px 0 28px}
+.card h3{margin:0 0 4px;font-size:18px;letter-spacing:-.01em}
+.card .sub{color:var(--muted);font-size:14px;margin:0 0 18px}
+
+.grid{display:grid;gap:11px}
+@media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+
+/* option tiles */
+.opt{
+  border:1.5px solid var(--line);border-radius:12px;padding:14px 15px;background:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:start;
+  font:inherit;color:inherit;width:100%;transition:border-color .12s, background .12s;
+}
+.opt:hover{border-color:#c7d2de}
+.opt[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
+.opt .t{font-weight:600;font-size:15px}
+.opt .d{color:var(--muted);font-size:13px;margin-top:2px}
+.opt .price{font-weight:700;white-space:nowrap;font-size:15px}
+
+/* slots */
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.day{
+  border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:10px 13px;min-width:74px;
+  cursor:pointer;font:inherit;text-align:center;flex:none;color:inherit;
+}
+.day[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
+.day .dw{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.day .dn{font-size:17px;font-weight:700;margin-top:1px}
+.day:disabled{opacity:.4;cursor:not-allowed}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:9px;margin-top:16px}
+.slot{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:11px 6px;cursor:pointer;font:inherit;font-size:14px;font-weight:600;color:inherit}
+.slot[aria-pressed="true"]{border-color:var(--brand);background:var(--brand);color:#fff}
+.slot:disabled{background:#f2f4f7;color:#aab3bf;cursor:not-allowed;text-decoration:line-through;border-color:transparent;font-weight:400}
+.closed{color:var(--muted);font-size:14px;padding:18px 0;text-align:center}
+
+/* form */
+label{display:block;font-size:13px;font-weight:600;margin:0 0 6px}
+input{
+  width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:inherit;
+}
+input:focus{outline:none;border-color:var(--brand)}
+.hint{font-size:12px;color:var(--muted);margin-top:5px}
+.err{color:#b42318;font-size:12.5px;margin-top:5px;display:none}
+.field.bad input{border-color:#f0a9a2}
+.field.bad .err{display:block}
+
+/* note */
+.note{background:var(--brand-soft);border:1px solid #cfe6e0;border-radius:11px;padding:13px 15px;font-size:13.5px;margin-top:18px;color:var(--brand-dark)}
+.note b{font-weight:700}
+
+/* buttons */
+.actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.btn{
+  border:0;border-radius:11px;padding:13px 22px;font:inherit;font-weight:600;cursor:pointer;font-size:15px;
+  background:var(--brand);color:#fff;
+}
+.btn:disabled{background:#c8d1da;cursor:not-allowed}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+
+/* confirmation */
+.done{text-align:center;padding:12px 0 4px}
+.tick{width:58px;height:58px;border-radius:50%;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;margin:0 auto 14px;font-size:29px}
+.summary{border:1px solid var(--line);border-radius:12px;margin-top:20px;overflow:hidden;text-align:start}
+.row{display:flex;justify-content:space-between;gap:16px;padding:12px 15px;border-bottom:1px solid var(--line);font-size:14.5px}
+.row:last-child{border-bottom:0}
+.row span:first-child{color:var(--muted)}
+.row span:last-child{font-weight:600;text-align:end}
+.wa{background:#e9f7ef;border:1px solid #bfe6cf;color:#0b5c37;border-radius:11px;padding:12px 15px;font-size:13.5px;margin-top:16px;display:flex;gap:10px;align-items:flex-start;text-align:start}
+
+/* value strip */
+.value{border-top:1px solid var(--line);background:#fff;margin-top:10px;padding:34px 0}
+.value h3{margin:0 0 18px;font-size:19px;letter-spacing:-.01em}
+.vg{display:grid;gap:14px}
+@media(min-width:700px){.vg{grid-template-columns:repeat(3,1fr)}}
+.v{border:1px solid var(--line);border-radius:12px;padding:16px}
+.v b{display:block;font-size:14.5px;margin-bottom:4px}
+.v p{margin:0;color:var(--muted);font-size:13.5px}
+
+/* footer */
+footer{background:var(--tl-dark);color:#c7d2e2;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+footer a{color:#8fc0ff;text-decoration:none;font-weight:600}
+footer a:hover{text-decoration:underline}
+.tl{font-weight:700;color:#fff;font-size:15px}
+.hide{display:none !important}
+</style>
+</head>
+<body>
+
+<div class="demo-bar"><div class="wrap">
+  <span data-i18n="demoBar"></span>
+  <a href="https://techlabskw.com" target="_blank" rel="noopener">techlabskw.com</a>
+</div></div>
+
+<header><div class="wrap bar">
+  <div class="brand">
+    <div class="dot">ن</div>
+    <div>
+      <h1 data-i18n="clinicName"></h1>
+      <span data-i18n="clinicTag"></span>
+    </div>
+  </div>
+  <div class="langs">
+    <button id="btnEn" onclick="setLang('en')" aria-pressed="true">EN</button>
+    <button id="btnAr" onclick="setLang('ar')" aria-pressed="false">عربي</button>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h2 data-i18n="heroH"></h2>
+    <p data-i18n="heroP"></p>
+  </section>
+
+  <div class="steps">
+    <div class="step on" id="s1"><i>1</i><span data-i18n="st1"></span></div>
+    <div class="step" id="s2"><i>2</i><span data-i18n="st2"></span></div>
+    <div class="step" id="s3"><i>3</i><span data-i18n="st3"></span></div>
+  </div>
+
+  <!-- STEP 1 -->
+  <section class="card" id="card1">
+    <h3 data-i18n="c1h"></h3>
+    <p class="sub" data-i18n="c1s"></p>
+    <div class="grid two" id="services"></div>
+    <div class="actions">
+      <button class="btn" id="next1" disabled onclick="go(2)" data-i18n="next"></button>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="card hide" id="card2">
+    <h3 data-i18n="c2h"></h3>
+    <p class="sub" data-i18n="c2s"></p>
+    <div class="days" id="days"></div>
+    <div id="slotsWrap"><div class="slots" id="slots"></div></div>
+    <div class="note" data-i18n="depositNote"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="go(1)" data-i18n="back"></button>
+      <button class="btn" id="next2" disabled onclick="go(3)" data-i18n="next"></button>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="card hide" id="card3">
+    <h3 data-i18n="c3h"></h3>
+    <p class="sub" data-i18n="c3s"></p>
+    <div class="grid two">
+      <div class="field" id="fName">
+        <label data-i18n="fName"></label>
+        <input id="pName" autocomplete="name">
+        <div class="err" data-i18n="errName"></div>
+      </div>
+      <div class="field" id="fPhone">
+        <label data-i18n="fPhone"></label>
+        <input id="pPhone" inputmode="tel" placeholder="9XXXXXXX" autocomplete="tel">
+        <div class="hint" data-i18n="phoneHint"></div>
+        <div class="err" data-i18n="errPhone"></div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" onclick="go(2)" data-i18n="back"></button>
+      <button class="btn" onclick="confirmBooking()" data-i18n="confirm"></button>
+    </div>
+  </section>
+
+  <!-- DONE -->
+  <section class="card hide" id="card4">
+    <div class="done">
+      <div class="tick">✓</div>
+      <h3 data-i18n="doneH"></h3>
+      <p class="sub" data-i18n="doneS"></p>
+    </div>
+    <div class="summary" id="summary"></div>
+    <div class="wa"><span>✓</span><span data-i18n="waNote"></span></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="reset()" data-i18n="again"></button>
+    </div>
+  </section>
+</main>
+
+<section class="value"><div class="wrap">
+  <h3 data-i18n="valueH"></h3>
+  <div class="vg">
+    <div class="v"><b data-i18n="v1t"></b><p data-i18n="v1p"></p></div>
+    <div class="v"><b data-i18n="v2t"></b><p data-i18n="v2p"></p></div>
+    <div class="v"><b data-i18n="v3t"></b><p data-i18n="v3p"></p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>
+    <div class="tl">Tech Labs — تك لابس</div>
+    <div data-i18n="footTag"></div>
+  </div>
+  <div>
+    <a href="https://techlabskw.com" target="_blank" rel="noopener">techlabskw.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://wa.me/96599079393" target="_blank" rel="noopener">WhatsApp +965 99079393</a>
+  </div>
+</div></footer>
+
+<script>
+const I18N = {
+  en:{
+    demoBar:"Live demo — a booking system for a Kuwaiti clinic. Built by Tech Labs.",
+    clinicName:"Nabd Clinic", clinicTag:"Sample clinic · Kuwait City",
+    heroH:"Book your appointment online",
+    heroP:"Choose a service, pick a time that suits you, and confirm. No phone call, no waiting for opening hours.",
+    st1:"Service", st2:"Time", st3:"Details",
+    c1h:"What do you need?", c1s:"Prices shown include consultation.",
+    c2h:"Choose a time", c2s:"Times shown are available now. Booked slots are greyed out.",
+    c3h:"Your details", c3s:"We only need two things.",
+    fName:"Full name", fPhone:"Mobile number", phoneHint:"Kuwait number, 8 digits",
+    errName:"Please enter your name", errPhone:"Please enter a valid 8-digit Kuwait number",
+    next:"Continue", back:"Back", confirm:"Confirm booking", again:"Start again",
+    depositNote:"<b>Deposit:</b> a KD 5 deposit confirms the appointment and is deducted from the final bill. This is what stops no-shows — clinics using it typically recover the cost within the first month.",
+    doneH:"Appointment confirmed", doneS:"A confirmation has been sent to your WhatsApp.",
+    waNote:"WhatsApp confirmation sent, with a reminder scheduled 24 hours before. Replying CANCEL frees the slot automatically.",
+    sName:"Name", sService:"Service", sWhen:"When", sDuration:"Duration", sTotal:"Total", sRef:"Reference",
+    valueH:"What this replaces",
+    v1t:"No more phone tag", v1p:"Patients book themselves, at 11pm, without anyone answering a phone.",
+    v2t:"No double bookings", v2p:"A slot disappears the moment it's taken. One calendar, no conflicts.",
+    v3t:"Fewer no-shows", v3p:"Deposits and automatic reminders. Cancellations free the slot for someone else.",
+    footTag:"Websites, online stores and booking systems in Kuwait — Arabic and English.",
+    min:"min", closedDay:"Closed — Friday", pick:"Pick a day above to see available times."
+  },
+  ar:{
+    demoBar:"نموذج حي — نظام حجز لعيادة كويتية. من تنفيذ تك لابس.",
+    clinicName:"عيادة نبض", clinicTag:"عيادة نموذجية · مدينة الكويت",
+    heroH:"احجز موعدك أونلاين",
+    heroP:"اختر الخدمة، وحدد الوقت اللي يناسبك، وأكّد. بدون اتصال، وبدون انتظار الدوام.",
+    st1:"الخدمة", st2:"الوقت", st3:"البيانات",
+    c1h:"وش تحتاج؟", c1s:"الأسعار شاملة الكشفية.",
+    c2h:"اختر الوقت", c2s:"الأوقات المعروضة متاحة الآن. المحجوز يظهر باهتاً.",
+    c3h:"بياناتك", c3s:"نحتاج شيئين بس.",
+    fName:"الاسم الكامل", fPhone:"رقم الموبايل", phoneHint:"رقم كويتي، ٨ أرقام",
+    errName:"الرجاء إدخال الاسم", errPhone:"الرجاء إدخال رقم كويتي صحيح من ٨ أرقام",
+    next:"التالي", back:"رجوع", confirm:"تأكيد الحجز", again:"حجز جديد",
+    depositNote:"<b>العربون:</b> عربون ٥ د.ك يثبّت الموعد ويُخصم من الفاتورة. هذا اللي يوقف الغياب — العيادات اللي تستخدمه غالباً تغطي التكلفة خلال الشهر الأول.",
+    doneH:"تم تأكيد الموعد", doneS:"وصلتك رسالة تأكيد على الواتساب.",
+    waNote:"أُرسل تأكيد واتساب، مع تذكير مجدول قبل الموعد بـ ٢٤ ساعة. والرد بكلمة إلغاء يحرّر الموعد تلقائياً.",
+    sName:"الاسم", sService:"الخدمة", sWhen:"الموعد", sDuration:"المدة", sTotal:"الإجمالي", sRef:"رقم الحجز",
+    valueH:"وش يستبدل هذا النظام",
+    v1t:"لا مكالمات ذهاب وإياب", v1p:"المريض يحجز بنفسه، الساعة ١١ بالليل، بدون ما يرد عليه أحد.",
+    v2t:"لا تعارض مواعيد", v2p:"الموعد يختفي لحظة ما ينحجز. تقويم واحد، بدون تضارب.",
+    v3t:"غياب أقل", v3p:"عربون وتذكيرات تلقائية. والإلغاء يحرّر الموعد لشخص ثاني.",
+    footTag:"مواقع ومتاجر إلكترونية وأنظمة حجز في الكويت — بالعربية والإنجليزية.",
+    min:"دقيقة", closedDay:"مغلق — الجمعة", pick:"اختر يوماً من الأعلى لعرض الأوقات المتاحة."
+  }
+};
+
+const SERVICES = [
+  {id:"gp",   en:["General consultation","Same-day appointments"],           ar:["كشف عام","مواعيد في نفس اليوم"],            price:15, mins:20},
+  {id:"derm", en:["Dermatology","Skin, hair and nails"],                     ar:["جلدية","بشرة وشعر وأظافر"],                price:25, mins:30},
+  {id:"dent", en:["Dental check-up","Examination and cleaning"],             ar:["فحص أسنان","كشف وتنظيف"],                  price:20, mins:45},
+  {id:"nutr", en:["Nutrition consultation","Plan and follow-up"],            ar:["استشارة تغذية","خطة ومتابعة"],             price:18, mins:40}
+];
+
+let lang="en", sel={svc:null, day:null, slot:null};
+
+/* deterministic "already booked" pattern so the demo looks real and stays stable */
+function isTaken(dayIdx, slotIdx){ return ((dayIdx*7 + slotIdx*3) % 5) === 0; }
+
+function fmtDay(d){
+  const days = { en:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], ar:["الأحد","الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"] };
+  return days[lang][d.getDay()];
+}
+function nextDays(n){
+  const out=[], t=new Date();
+  for(let i=0;i<n;i++){ const d=new Date(t); d.setDate(t.getDate()+i); out.push(d); }
+  return out;
+}
+
+function setLang(l){
+  lang=l;
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l==="ar") ? "rtl" : "ltr";
+  btnEn.setAttribute("aria-pressed", l==="en");
+  btnAr.setAttribute("aria-pressed", l==="ar");
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.getAttribute("data-i18n");
+    if(I18N[l][k]!==undefined) el.innerHTML=I18N[l][k];
+  });
+  renderServices(); renderDays(); renderSlots();
+  if(!card4.classList.contains("hide")) renderSummary();
+}
+
+function renderServices(){
+  const box=document.getElementById("services"); box.innerHTML="";
+  SERVICES.forEach(s=>{
+    const b=document.createElement("button");
+    b.className="opt"; b.type="button";
+    b.setAttribute("aria-pressed", sel.svc===s.id);
+    b.innerHTML = `<span><span class="t">${s[lang][0]}</span><span class="d">${s[lang][1]} · ${s.mins} ${I18N[lang].min}</span></span>
+                   <span class="price">${s.price} KD</span>`;
+    b.onclick=()=>{ sel.svc=s.id; renderServices(); next1.disabled=false; };
+    box.appendChild(b);
+  });
+}
+
+function renderDays(){
+  const box=document.getElementById("days"); box.innerHTML="";
+  nextDays(7).forEach((d,i)=>{
+    const b=document.createElement("button");
+    b.className="day"; b.type="button";
+    const friday = d.getDay()===5;
+    b.disabled = friday;
+    b.setAttribute("aria-pressed", sel.day===i);
+    b.innerHTML=`<div class="dw">${fmtDay(d)}</div><div class="dn">${d.getDate()}</div>`;
+    b.onclick=()=>{ sel.day=i; sel.slot=null; next2.disabled=true; renderDays(); renderSlots(); };
+    box.appendChild(b);
+  });
+}
+
+function renderSlots(){
+  const wrap=document.getElementById("slotsWrap");
+  if(sel.day===null){ wrap.innerHTML=`<div class="closed">${I18N[lang].pick}</div>`; return; }
+  const d=nextDays(7)[sel.day];
+  if(d.getDay()===5){ wrap.innerHTML=`<div class="closed">${I18N[lang].closedDay}</div>`; return; }
+  const times=["09:00","09:40","10:20","11:00","11:40","16:00","16:40","17:20","18:00","18:40","19:20","20:00"];
+  wrap.innerHTML='<div class="slots" id="slots"></div>';
+  const box=document.getElementById("slots");
+  times.forEach((t,i)=>{
+    const b=document.createElement("button");
+    b.className="slot"; b.type="button";
+    b.textContent=t;
+    b.disabled=isTaken(sel.day,i);
+    b.setAttribute("aria-pressed", sel.slot===t);
+    b.onclick=()=>{ sel.slot=t; renderSlots(); next2.disabled=false; };
+    box.appendChild(b);
+  });
+}
+
+function go(step){
+  [card1,card2,card3,card4].forEach(c=>c.classList.add("hide"));
+  document.getElementById("card"+step).classList.remove("hide");
+  [s1,s2,s3].forEach((el,i)=>{
+    el.classList.toggle("on", i===step-1);
+    el.classList.toggle("done", i<step-1);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function confirmBooking(){
+  const n=document.getElementById("pName").value.trim();
+  const p=document.getElementById("pPhone").value.replace(/\D/g,"");
+  let bad=false;
+  fName.classList.toggle("bad", !n); if(!n) bad=true;
+  const okPhone = p.length===8 && /^[569]/.test(p);
+  fPhone.classList.toggle("bad", !okPhone); if(!okPhone) bad=true;
+  if(bad) return;
+  renderSummary();
+  [card1,card2,card3].forEach(c=>c.classList.add("hide"));
+  card4.classList.remove("hide");
+  [s1,s2,s3].forEach(el=>{el.classList.remove("on");el.classList.add("done")});
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function renderSummary(){
+  const s=SERVICES.find(x=>x.id===sel.svc);
+  const d=nextDays(7)[sel.day];
+  const n=document.getElementById("pName").value.trim();
+  const t=I18N[lang];
+  const dateStr = `${fmtDay(d)} ${d.getDate()}/${d.getMonth()+1} · ${sel.slot}`;
+  const ref = "NB-" + String(1000 + (sel.day*37 + parseInt(sel.slot)) % 8999);
+  document.getElementById("summary").innerHTML = `
+    <div class="row"><span>${t.sName}</span><span>${n||"—"}</span></div>
+    <div class="row"><span>${t.sService}</span><span>${s[lang][0]}</span></div>
+    <div class="row"><span>${t.sWhen}</span><span>${dateStr}</span></div>
+    <div class="row"><span>${t.sDuration}</span><span>${s.mins} ${t.min}</span></div>
+    <div class="row"><span>${t.sTotal}</span><span>${s.price} KD</span></div>
+    <div class="row"><span>${t.sRef}</span><span>${ref}</span></div>`;
+}
+
+function reset(){
+  sel={svc:null,day:null,slot:null};
+  document.getElementById("pName").value="";
+  document.getElementById("pPhone").value="";
+  fName.classList.remove("bad"); fPhone.classList.remove("bad");
+  next1.disabled=true; next2.disabled=true;
+  renderServices(); renderDays(); renderSlots();
+  go(1);
+}
+
+setLang("en");
+renderSlots();
+</script>
+</body>
+</html>

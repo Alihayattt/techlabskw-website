@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tech Labs | Custom Software & Website Development in Kuwait</title>
+<meta name="description" content="Tech Labs (techlabskw.com) is a Kuwait-based software studio building custom websites, web apps, e-commerce stores, admin dashboards, and mobile & business software. Transparent KWD pricing." />
+<meta name="keywords" content="web design Kuwait, software development Kuwait, ecommerce Kuwait, mobile app development Kuwait, website design Kuwait, KNET integration, Tech Labs" />
+<meta name="theme-color" content="#070b12" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="Tech Labs" />
+<meta name="geo.region" content="KW" />
+<meta name="geo.placename" content="Kuwait" />
+<link rel="canonical" href="https://techlabskw.com/" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Tech Labs" />
+<meta property="og:title" content="Tech Labs | Building Digital Solutions" />
+<meta property="og:description" content="Custom software, websites, e-commerce and admin dashboards for Kuwait businesses. Clear KWD pricing." />
+<meta property="og:url" content="https://techlabskw.com/" />
+<meta property="og:image" content="https://techlabskw.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Tech Labs — custom software & website development in Kuwait" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="ar_KW" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tech Labs | Building Digital Solutions" />
+<meta name="twitter:description" content="Custom software, websites, e-commerce and admin dashboards for Kuwait businesses. Clear KWD pricing." />
+<meta name="twitter:image" content="https://techlabskw.com/assets/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#080c13; --bg2:#0b101a; --card:#0e1420; --card2:#101826;
+    --blue:#3a7af6; --blue-l:#85a8e0; --blue-d:#2f6bff;
+    --silver:#c4cddb; --text:#eef2f8; --muted:#7e8599; --border:rgba(255,255,255,.07);
+    --grad:linear-gradient(135deg,#6da0f5 0%,#2f6bff 100%);
+    --glow:0 10px 34px -16px rgba(58,122,246,.4);
+    --maxw:1140px; --r:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,.logo-word{font-family:'Poppins',sans-serif;line-height:1.15;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  section{position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Poppins';font-weight:600;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue-l);background:transparent;border:none;padding:0 0 10px;position:relative}
+  .eyebrow::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:28px;height:2px;background:var(--blue);border-radius:2px}
+  .sec-head{max-width:720px;margin:0 auto 54px;text-align:center}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;margin:18px 0 14px}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Poppins';font-weight:600;font-size:.95rem;padding:14px 26px;border-radius:100px;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+  .btn-primary{background:var(--grad);color:#fff;box-shadow:var(--glow)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -14px rgba(58,122,246,.5)}
+  .btn-ghost{background:rgba(255,255,255,.04);color:var(--text);border:1px solid var(--border)}
+  .btn-ghost:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
+
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s ease,border-color .3s ease;transform:translateZ(0);will-change:transform}
+  header.nav.scrolled{background:rgba(8,12,19,.95);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .mark{width:38px;height:38px}
+  .brand .logo-word{font-weight:700;font-size:1.18rem;letter-spacing:.04em}
+  .brand .logo-word b{color:var(--blue-l);font-weight:700}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{color:var(--muted);font-size:.93rem;font-weight:500;transition:.2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{padding:160px 0 90px;text-align:center;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:-2;background:
+     radial-gradient(55% 45% at 50% 0%,rgba(58,122,246,.13),transparent 72%),
+     radial-gradient(40% 40% at 82% 26%,rgba(109,160,245,.06),transparent 72%)}
+  .grid-bg{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 65% 55% at 50% 25%,#000 35%,transparent 78%)}
+  .hero .mark-lg{width:96px;height:96px;margin:0 auto 26px;filter:drop-shadow(0 10px 30px rgba(31,109,255,.45))}
+  .hero h1{font-size:clamp(2.3rem,6vw,4.1rem);font-weight:800;margin-bottom:20px;letter-spacing:-.02em}
+  .hero p.lead{max-width:660px;margin:0 auto 34px;color:var(--muted);font-size:clamp(1rem,2.4vw,1.22rem)}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+  .hero-tags span{font-size:.82rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:8px 15px;border-radius:100px}
+
+  /* STATS */
+  .stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:42px 0}
+  .stat{text-align:center}
+  .stat b{font-family:'Poppins';font-weight:800;font-size:2rem;display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat span{color:var(--muted);font-size:.86rem}
+
+  .pad{padding:96px 0}
+  .pad-t{padding-top:96px}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .about-grid h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:800;margin:16px 0 18px}
+  .about-grid p{color:var(--muted);margin-bottom:16px}
+  .about-list{list-style:none;display:grid;gap:14px;margin-top:24px}
+  .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem}
+  .about-list .ic{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(31,109,255,.14);display:grid;place-items:center;color:var(--blue-l);font-weight:700;font-size:.8rem}
+  .about-visual{position:relative;border:1px solid var(--border);border-radius:24px;background:linear-gradient(160deg,var(--card),var(--bg2));padding:34px;overflow:hidden}
+  .about-visual::before{content:"";position:absolute;width:240px;height:240px;background:var(--grad);filter:blur(90px);opacity:.25;top:-60px;right:-60px}
+  .av-row{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.02);margin-bottom:12px}
+  .av-row .dot{width:38px;height:38px;border-radius:11px;background:var(--grad);display:grid;place-items:center;flex:0 0 38px}
+  .av-row h4{font-size:.98rem;font-weight:600}
+  .av-row p{font-size:.82rem;color:var(--muted);margin:0}
+
+  /* CARDS GENERIC */
+  .cards{display:grid;gap:22px}
+  .c3{grid-template-columns:repeat(3,1fr)}
+  .c2{grid-template-columns:repeat(2,1fr)}
+  .card{background:linear-gradient(165deg,var(--card),var(--bg2));border:1px solid var(--border);border-radius:var(--r);padding:30px;transition:transform .25s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-5px);border-color:rgba(84,166,255,.4)}
+  .card .ico{width:52px;height:52px;border-radius:14px;background:rgba(31,109,255,.12);display:grid;place-items:center;margin-bottom:18px;color:var(--blue-l)}
+  .card h3{font-size:1.18rem;font-weight:700;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.93rem;margin-bottom:14px}
+  .feat{list-style:none;display:grid;gap:9px}
+  .feat li{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--silver)}
+  .feat li svg{flex:0 0 16px;margin-top:4px;color:var(--blue-l)}
+  .pill-price{display:inline-block;margin-top:16px;font-family:'Poppins';font-weight:600;font-size:.9rem;color:var(--blue-l);background:transparent;border:1px solid var(--border);padding:6px 14px;border-radius:100px}
+
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .pillar{position:relative;background:linear-gradient(165deg,var(--card2),var(--bg2));border:1px solid var(--border);border-radius:22px;padding:38px;overflow:hidden}
+  .pillar::after{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;background:linear-gradient(135deg,rgba(84,166,255,.5),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .pillar .ico{width:60px;height:60px;border-radius:16px;background:var(--grad);display:grid;place-items:center;margin-bottom:20px;box-shadow:var(--glow)}
+  .pillar h3{font-size:1.5rem;font-weight:800;margin-bottom:12px}
+  .pillar p{color:var(--muted);margin-bottom:18px}
+
+  /* DETAILED SERVICE ROWS */
+  .svc{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:30px;border:1px solid var(--border);border-radius:var(--r);background:linear-gradient(165deg,var(--card),var(--bg2));transition:.25s}
+  .svc:hover{border-color:rgba(84,166,255,.4);transform:translateY(-3px)}
+  .svc .num{width:54px;height:54px;border-radius:14px;background:rgba(31,109,255,.12);display:grid;place-items:center;color:var(--blue-l);font-family:'Poppins';font-weight:800;font-size:1.2rem}
+  .svc h3{font-size:1.22rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .svc h3 .tag{font-family:'Poppins';font-size:.7rem;font-weight:600;color:var(--blue-l);background:transparent;border:1px solid var(--border);padding:4px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase}
+  .svc p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+  .svc .feat{grid-template-columns:1fr 1fr;gap:9px 22px}
+  @media(max-width:560px){.svc .feat{grid-template-columns:1fr}}
+
+  /* PRICING */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .plan{position:relative;display:flex;flex-direction:column;background:linear-gradient(165deg,var(--card),var(--bg2));border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:.25s}
+  .plan:hover{transform:translateY(-5px);border-color:rgba(84,166,255,.4)}
+  .plan.feat-plan{border-color:rgba(133,168,224,.4);background:linear-gradient(165deg,var(--card2),var(--bg2));box-shadow:var(--glow)}
+  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);font-family:'Poppins';font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:6px 16px;border-radius:100px}
+  .plan h4{font-size:1.05rem;font-weight:600;color:var(--silver);margin-bottom:6px}
+  .plan .amt{font-family:'Poppins';font-weight:800;font-size:2.3rem;line-height:1.1;margin:8px 0 2px}
+  .plan .amt small{font-size:.85rem;font-weight:600;color:var(--muted)}
+  .plan .from{font-size:.8rem;color:var(--muted);margin-bottom:18px}
+  .plan .feat{margin-bottom:24px;flex:1}
+  .plan .btn{width:100%;justify-content:center;margin-top:auto}
+
+  .ptable{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--card)}
+  .ptable th,.ptable td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--border);font-size:.92rem}
+  .ptable th{font-family:'Poppins';font-weight:600;color:var(--silver);background:var(--bg2);font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
+  .ptable td:last-child{font-family:'Poppins';font-weight:700;color:var(--blue-l);white-space:nowrap}
+  .ptable tr:last-child td{border-bottom:none}
+  .ptable tr:hover td{background:rgba(255,255,255,.02)}
+  .price-note{text-align:center;color:var(--muted);font-size:.86rem;margin-top:22px}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .step{position:relative;padding:28px;border:1px solid var(--border);border-radius:var(--r);background:linear-gradient(165deg,var(--card),var(--bg2))}
+  .step .n{font-family:'Poppins';font-weight:800;font-size:2.4rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:14px}
+  .step h4{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:.88rem}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto;display:grid;gap:14px}
+  .qa{border:1px solid var(--border);border-radius:14px;background:var(--card);overflow:hidden}
+  .qa summary{padding:20px 24px;font-family:'Poppins';font-weight:600;font-size:1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary::after{content:"+";font-size:1.4rem;color:var(--blue-l);transition:.2s}
+  .qa[open] summary::after{transform:rotate(45deg)}
+  .qa p{padding:0 24px 22px;color:var(--muted);font-size:.93rem}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .contact-info h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:800;margin:14px 0 16px}
+  .contact-info>p{color:var(--muted);margin-bottom:26px}
+  .ci-row{display:flex;gap:15px;align-items:center;padding:16px 18px;border:1px solid var(--border);border-radius:14px;background:var(--card);margin-bottom:13px;transition:.2s}
+  .ci-row:hover{border-color:rgba(84,166,255,.4);transform:translateX(4px)}
+  .ci-row .ic{width:46px;height:46px;border-radius:12px;background:var(--grad);display:grid;place-items:center;flex:0 0 46px;box-shadow:var(--glow)}
+  .ci-row .lbl{font-size:.78rem;color:var(--muted)}
+  .ci-row .val{font-family:'Poppins';font-weight:600;font-size:1rem}
+  form.cform{background:linear-gradient(165deg,var(--card),var(--bg2));border:1px solid var(--border);border-radius:20px;padding:32px}
+  form.cform label{display:block;font-size:.84rem;font-weight:600;margin-bottom:7px;color:var(--silver)}
+  form.cform .fg{margin-bottom:18px}
+  form.cform input,form.cform select,form.cform textarea{width:100%;padding:13px 15px;background:var(--bg);border:1px solid var(--border);border-radius:11px;color:var(--text);font-family:inherit;font-size:.93rem;transition:.2s}
+  form.cform input:focus,form.cform select:focus,form.cform textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,109,255,.16)}
+  form.cform textarea{resize:vertical;min-height:110px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);background:var(--bg2);padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px;margin-bottom:44px}
+  .foot-grid h5{font-family:'Poppins';font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .foot-grid a{display:block;color:var(--silver);font-size:.92rem;margin-bottom:10px;transition:.2s}
+  .foot-grid a:hover{color:var(--blue-l)}
+  .foot-brand p{color:var(--muted);font-size:.9rem;margin:14px 0 18px;max-width:280px}
+  .socials{display:flex;gap:12px}
+  .socials a{width:40px;height:40px;border-radius:11px;border:1px solid var(--border);display:grid;place-items:center;color:var(--silver);transition:.2s}
+  .socials a:hover{background:var(--grad);color:#fff;border-color:transparent;transform:translateY(-2px)}
+  .foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
+
+  /* FLOATING WHATSAPP */
+  .wa-float{position:fixed;bottom:24px;right:24px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(37,211,102,.6);transition:.25s}
+  .wa-float:hover{transform:scale(1.08)}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  /* Building demos video showcase */
+  .demos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+  .demo{position:relative;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:#05080e;box-shadow:var(--glow);aspect-ratio:16/9}
+  .demo video{width:100%;height:100%;display:block;object-fit:cover;background:#05080e}
+  .demo .demo-tag{position:absolute;left:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:9px;font-family:'Poppins';font-weight:600;font-size:.8rem;color:#fff;background:rgba(8,12,19,.82);border:1px solid var(--border);padding:8px 15px;border-radius:100px}
+  .demo .demo-tag .dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;box-shadow:0 0 9px #2ecc71}
+  .demo::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);border-radius:20px}
+  /* scroll-in move for videos */
+  .reveal-v{opacity:0;transform:translateY(60px) scale(.955);transition:opacity .95s cubic-bezier(.22,1,.36,1),transform .95s cubic-bezier(.22,1,.36,1)}
+  .reveal-v.in{opacity:1;transform:none}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .nav-links,.nav-cta .btn{display:none}
+    .burger{display:flex}
+    .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:rgba(8,12,19,.99);padding:24px;gap:20px;border-bottom:1px solid var(--border)}
+    .about-grid,.contact-grid,.pillars{grid-template-columns:1fr}
+    .c3,.price-grid,.steps{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px 22px}
+    .c2{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){.foot-grid{grid-template-columns:1fr}.hero{padding-top:130px}}
+
+  /* LANGUAGE TOGGLE */
+  .lang-toggle{font-family:'Poppins';font-weight:600;font-size:.85rem;color:var(--blue-l);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:9px 15px;border-radius:100px;cursor:pointer;transition:.2s;line-height:1;direction:ltr}
+  .lang-toggle:hover{background:rgba(255,255,255,.09);color:var(--text)}
+
+  /* ARABIC / RTL */
+  html[lang="ar"] body{font-family:'Cairo',sans-serif}
+  html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4,
+  html[lang="ar"] .btn,html[lang="ar"] .plan .amt,html[lang="ar"] .step .n,
+  html[lang="ar"] .stat b,html[lang="ar"] .ptable th,html[lang="ar"] .qa summary{font-family:'Cairo',sans-serif}
+  html[lang="ar"] .eyebrow,html[lang="ar"] .plan .badge,html[lang="ar"] .svc h3 .tag,
+  html[lang="ar"] .brand .logo-word{letter-spacing:normal}
+  /* keep the TL wordmark in Latin/LTR */
+  html[lang="ar"] .brand .logo-word{font-family:'Poppins',sans-serif;direction:ltr}
+  html[dir="rtl"] .ptable th,html[dir="rtl"] .ptable td{text-align:right}
+  html[dir="rtl"] form.cform label,html[dir="rtl"] .foot-grid a,
+  html[dir="rtl"] .foot-grid h5,html[dir="rtl"] .about-list li,
+  html[dir="rtl"] .feat li,html[dir="rtl"] .step h4,html[dir="rtl"] .step p{text-align:right}
+  html[dir="rtl"] .ci-row:hover{transform:translateX(-4px)}
+  html[dir="rtl"] .wa-float{right:auto;left:24px}
+  html[dir="rtl"] form.cform input,html[dir="rtl"] form.cform select,
+  html[dir="rtl"] form.cform textarea{text-align:right}
+</style>
+<!-- Structured data: business, services, site, FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://techlabskw.com/#business",
+      "name": "Tech Labs",
+      "alternateName": "Tech Labs Kuwait",
+      "url": "https://techlabskw.com/",
+      "image": "https://techlabskw.com/assets/og-image.png",
+      "logo": "https://techlabskw.com/assets/logo-mark.svg",
+      "description": "Tech Labs is a Kuwait-based software studio building custom websites, web apps, e-commerce stores, admin dashboards, and mobile & business software with transparent KWD pricing.",
+      "slogan": "Building Digital Solutions.",
+      "telephone": "+965-9907-9393",
+      "email": "ali.hayat@techlabskw.com",
+      "priceRange": "KWD 99 – 5000+",
+      "currenciesAccepted": "KWD",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KW",
+        "addressLocality": "Kuwait"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Kuwait"
+      },
+      "sameAs": [
+        "https://instagram.com/techlabskw",
+        "https://wa.me/96599079393"
+      ],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business & Corporate Websites" }, "priceCurrency": "KWD", "price": "250" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Pages & Microsites" }, "priceCurrency": "KWD", "price": "99" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-Commerce Stores" }, "priceCurrency": "KWD", "price": "750" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Admin Control Panels & Dashboards" }, "priceCurrency": "KWD", "price": "850" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Management Systems" }, "priceCurrency": "KWD", "price": "350" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Booking & Reservation Systems" }, "priceCurrency": "KWD", "price": "600" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Applications & Customer Portals" }, "priceCurrency": "KWD", "price": "2500" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software" }, "priceCurrency": "KWD", "price": "3000" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile Apps (iOS & Android)" }, "priceCurrency": "KWD", "price": "2500" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ERP / CRM / POS Systems" }, "priceCurrency": "KWD", "price": "5000" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Maintenance & Care" }, "priceCurrency": "KWD", "price": "30" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://techlabskw.com/#website",
+      "url": "https://techlabskw.com/",
+      "name": "Tech Labs",
+      "publisher": { "@id": "https://techlabskw.com/#business" },
+      "inLanguage": ["en", "ar"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techlabskw.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "How long does a website take?", "acceptedAnswer": { "@type": "Answer", "text": "A landing page takes 3–5 days, a business website 1–3 weeks, and an e-commerce store or custom system 3–8 weeks depending on scope. We agree on a clear timeline before we start." } },
+        { "@type": "Question", "name": "Do you build in both Arabic and English?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Bilingual Arabic + English with proper right-to-left (RTL) layouts is standard on most projects, so you reach the whole Kuwait market." } },
+        { "@type": "Question", "name": "Can I update the website myself afterwards?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We integrate an easy admin panel / CMS and train you to add products, edit content and manage orders without any coding." } },
+        { "@type": "Question", "name": "Do you handle payments like KNET?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we integrate KNET, MyFatoorah and card payments so your customers can pay securely online." } },
+        { "@type": "Question", "name": "What about hosting and the domain?", "acceptedAnswer": { "@type": "Answer", "text": "We can fully manage hosting, your domain, business email and SSL, or deploy to your own accounts — whichever you prefer." } },
+        { "@type": "Question", "name": "Are the prices fixed?", "acceptedAnswer": { "@type": "Answer", "text": "The prices shown are real starting points for the Kuwait market. Your final quote depends on the exact features you need — and the consultation is always free." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="brand" aria-label="Tech Labs home">
+      <svg class="mark" viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="ns" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#e6ebf2"/><stop offset="1" stop-color="#b9c2cf"/></linearGradient>
+          <linearGradient id="nb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54a6ff"/><stop offset=".5" stop-color="#1f6dff"/><stop offset="1" stop-color="#0a4fd6"/></linearGradient>
+        </defs>
+        <g transform="translate(30,0) skewX(-7)">
+          <polygon fill="url(#ns)" points="28,28 158,28 158,58 112,58 112,205 78,205 78,58 28,58"/>
+          <polygon fill="url(#nb)" points="126,46 160,46 160,171 206,171 206,205 126,205"/>
+        </g>
+      </svg>
+      <span class="logo-word">TECH <b>LABS</b></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#web-services">Web Design</a>
+      <a href="#demos">Demos</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">العربية</button>
+      <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" class="btn btn-primary">Get a Quote</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <svg class="mark-lg" viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" aria-label="Tech Labs">
+      <defs>
+        <linearGradient id="hs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#e6ebf2"/><stop offset="1" stop-color="#b9c2cf"/></linearGradient>
+        <linearGradient id="hb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54a6ff"/><stop offset=".5" stop-color="#1f6dff"/><stop offset="1" stop-color="#0a4fd6"/></linearGradient>
+      </defs>
+      <g transform="translate(30,0) skewX(-7)">
+        <polygon fill="url(#hs)" points="28,28 158,28 158,58 112,58 112,205 78,205 78,58 28,58"/>
+        <polygon fill="url(#hb)" points="126,46 160,46 160,171 206,171 206,205 126,205"/>
+      </g>
+    </svg>
+    <span class="eyebrow">● Building Digital Solutions</span>
+    <h1>Custom Software & Websites,<br/><span class="grad-text">Engineered for Kuwait.</span></h1>
+    <p class="lead">Tech Labs designs and builds high-performance websites, e-commerce stores, admin dashboards and bespoke software that help Kuwait businesses grow — clean code, modern design, Arabic &amp; English, and clear pricing.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">View Pricing &amp; Services</a>
+      <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn btn-ghost">Talk on WhatsApp</a>
+    </div>
+    <div class="hero-tags">
+      <span>Custom Software</span><span>Website Design</span><span>E‑Commerce &amp; KNET</span><span>Admin Dashboards</span><span>Mobile Apps</span><span>Maintenance</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><b>100%</b><span>Custom-built, no templates</span></div>
+    <div class="stat"><b>AR / EN</b><span>Bilingual &amp; RTL ready</span></div>
+    <div class="stat"><b>KNET</b><span>Local payment integration</span></div>
+    <div class="stat"><b>24/7</b><span>Support &amp; maintenance</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="pad" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="eyebrow">About Tech Labs</span>
+      <h2>A Kuwait software studio that builds <span class="grad-text">digital solutions that work.</span></h2>
+      <p>Tech Labs is a software and web development company based in Kuwait. We partner with startups, established businesses and entrepreneurs to turn ideas into reliable, beautifully designed digital products.</p>
+      <p>From a single landing page to a full e-commerce platform or a custom internal system, every project is built from scratch, optimized for speed and SEO, and made to look great on every device.</p>
+      <ul class="about-list">
+        <li><span class="ic">✓</span><div><b>Custom-built, not templated.</b> Every solution is designed around your brand and your workflow.</div></li>
+        <li><span class="ic">✓</span><div><b>Bilingual by default.</b> Full Arabic + English support with proper right-to-left layouts.</div></li>
+        <li><span class="ic">✓</span><div><b>Local-ready.</b> KNET &amp; MyFatoorah payments, local hosting and WhatsApp integration.</div></li>
+        <li><span class="ic">✓</span><div><b>Ongoing partnership.</b> We maintain, update and grow your product after launch.</div></li>
+      </ul>
+    </div>
+    <div class="about-visual reveal">
+      <div class="av-row"><div class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg></div><div><h4>Clean, modern code</h4><p>Fast, secure and built to scale.</p></div></div>
+      <div class="av-row"><div class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><h4>Powerful admin control</h4><p>Manage your whole site from one dashboard.</p></div></div>
+      <div class="av-row"><div class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div><div><h4>Secure &amp; reliable</h4><p>SSL, backups and monitoring included.</p></div></div>
+      <div class="av-row" style="margin-bottom:0"><div class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h4>Real human support</h4><p>Reach us directly on WhatsApp, anytime.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / TWO PILLARS -->
+<section class="pad" id="services" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>Two core services. Endless possibilities.</h2>
+      <p>Everything Tech Labs offers falls under two pillars — bespoke software and the design, building &amp; care of your web presence.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Custom Software Design &amp; Development</h3>
+        <p>Tailor-made software built around exactly how your business works — web apps, mobile apps, internal systems, automations and integrations.</p>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Bespoke web &amp; mobile applications</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>ERP, CRM &amp; POS systems</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>API &amp; third-party integrations</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>UI/UX design &amp; prototyping</li>
+        </ul>
+        <a href="#software" class="pill-price">Explore software →</a>
+      </div>
+      <div class="pillar reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Software Maintenance &amp; Website Page Design</h3>
+        <p>The full website lifecycle — from a stunning, conversion-focused design to powerful admin control and ongoing maintenance that keeps everything fast and secure.</p>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Business sites, landing pages &amp; portals</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>E-commerce stores with admin dashboards</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>CMS &amp; full admin control panels</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Maintenance, hosting &amp; security care</li>
+        </ul>
+        <a href="#web-services" class="pill-price">Explore web design →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED WEB SERVICES -->
+<section class="pad" id="web-services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Website Design Services</span>
+      <h2>Every type of website, explained in detail.</h2>
+      <p>We don't just "make websites." Here is exactly what each website service includes — so you know precisely what you're getting.</p>
+    </div>
+    <div class="cards" style="gap:18px">
+      <div class="svc reveal">
+        <div class="num">01</div>
+        <div>
+          <h3>Business &amp; Corporate Websites <span class="tag">From 250 KWD</span></h3>
+          <p>A polished, multi-page website that represents your company professionally — Home, About, Services, Portfolio and Contact — designed to build trust and turn visitors into customers. Fully responsive, SEO-optimized and bilingual.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Custom multi-page design (5–15+ pages)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Mobile, tablet &amp; desktop responsive</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Arabic + English with RTL layout</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>On-page SEO &amp; Google indexing</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Contact forms &amp; WhatsApp integration</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Google Maps &amp; social links</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="num">02</div>
+        <div>
+          <h3>Landing Pages &amp; Microsites <span class="tag">From 99 KWD</span></h3>
+          <p>A single, high-converting page built around one goal — a product launch, campaign, event or lead capture. Fast-loading, persuasive and optimized to turn clicks from ads into real enquiries.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Conversion-focused single page</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Lead-capture form &amp; click-to-call</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Built for ad campaigns (Meta / Google)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Analytics &amp; pixel tracking ready</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="num">03</div>
+        <div>
+          <h3>E-Commerce Stores <span class="tag">From 750 KWD</span></h3>
+          <p>A complete online shop where customers browse, add to cart and pay securely. Includes product catalog, inventory, secure checkout with KNET / MyFatoorah, order tracking and a full admin dashboard to run your store.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Product catalog with categories &amp; search</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Cart, secure checkout &amp; KNET payments</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Coupons, discounts &amp; delivery options</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Order management &amp; stock control</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Customer accounts &amp; order history</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Sales reports &amp; analytics dashboard</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="num">04</div>
+        <div>
+          <h3>Admin Control Panels &amp; Dashboards <span class="tag">From 850 KWD</span></h3>
+          <p>The command center behind your website — a secure, easy-to-use admin panel where you control everything without touching code. Add or edit content and products, view and process orders, manage users with role-based permissions, and monitor performance with live analytics.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Add / edit / delete content &amp; products</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Order &amp; enquiry management</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>User roles &amp; permission control</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Live analytics &amp; reporting dashboards</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Inventory &amp; data tables with search/filter</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Activity logs &amp; secure login</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="num">05</div>
+        <div>
+          <h3>Content Management Systems (CMS) <span class="tag">From 350 KWD</span></h3>
+          <p>Update your own website any time — no developer needed. We integrate a friendly CMS so you can edit text, swap images, publish blog posts and add new pages yourself, with changes going live instantly.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Edit text &amp; images yourself</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Blog / news publishing</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Add &amp; reorder pages</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Media library &amp; SEO fields</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="num">06</div>
+        <div>
+          <h3>Booking &amp; Reservation Systems <span class="tag">From 600 KWD</span></h3>
+          <p>Let customers book appointments, tables or services online around the clock. Includes a live calendar, time-slot availability, automated confirmations and optional online payment — perfect for clinics, salons, restaurants and service businesses.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Live calendar &amp; availability</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Automated SMS / email confirmations</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Online deposits &amp; payments</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Admin booking management</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="num">07</div>
+        <div>
+          <h3>Web Applications &amp; Customer Portals <span class="tag">From 2,500 KWD</span></h3>
+          <p>Software that lives in the browser — secure login accounts, personalized dashboards and custom workflows built around your business. Ideal for membership portals, internal tools, SaaS products and client management systems.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Secure user accounts &amp; logins</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Personalized user dashboards</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Custom business logic &amp; workflows</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Database &amp; API integrations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="num">08</div>
+        <div>
+          <h3>Website Maintenance &amp; Care <span class="tag">From 30 KWD / mo</span></h3>
+          <p>Keep your website fast, secure and up-to-date. Our care plans cover updates, security patches, backups, performance monitoring and content changes — so your site keeps running while you focus on business.</p>
+          <ul class="feat">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Security updates &amp; patches</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Regular backups &amp; monitoring</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Content &amp; image updates</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Speed &amp; uptime optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFTWARE SERVICES -->
+<section class="pad" id="software" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Custom Software &amp; Development</span>
+      <h2>Software built around <span class="grad-text">your business.</span></h2>
+      <p>When off-the-shelf tools don't fit, we build exactly what you need — from mobile apps to enterprise systems.</p>
+    </div>
+    <div class="cards c3">
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Custom Software</h3>
+        <p>Bespoke desktop &amp; web software designed around your exact processes, data and team.</p>
+        <ul class="feat"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Built to your workflow</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Scalable &amp; secure</li></ul>
+        <span class="pill-price">From 3,000 KWD</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+        <h3>Mobile Apps</h3>
+        <p>Native-quality iOS &amp; Android apps with smooth UX, push notifications and offline support.</p>
+        <ul class="feat"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>iOS &amp; Android</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>App Store deployment</li></ul>
+        <span class="pill-price">From 2,500 KWD</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="8"/><rect x="12" y="6" width="3" height="12"/><rect x="17" y="13" width="3" height="5"/></svg></div>
+        <h3>ERP / CRM / POS</h3>
+        <p>Enterprise systems to manage sales, inventory, customers and operations in one place.</p>
+        <ul class="feat"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Inventory &amp; sales</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Dashboards &amp; reports</li></ul>
+        <span class="pill-price">From 5,000 KWD</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 7l6 5-6 5M10 17l-6-5 6-5"/></svg></div>
+        <h3>API &amp; Integrations</h3>
+        <p>Connect your tools — payments, delivery, WhatsApp, accounting and third-party services.</p>
+        <ul class="feat"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Payment &amp; delivery APIs</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Automations</li></ul>
+        <span class="pill-price">From 400 KWD</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+        <h3>UI / UX Design</h3>
+        <p>Beautiful, intuitive interfaces and prototypes — designed before a line of code is written.</p>
+        <ul class="feat"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Wireframes &amp; prototypes</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Brand-aligned design</li></ul>
+        <span class="pill-price">From 350 KWD</span>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
+        <h3>Hosting &amp; Domains</h3>
+        <p>Reliable hosting, domain setup, business email and SSL — fully managed for you.</p>
+        <ul class="feat"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Managed hosting &amp; SSL</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Business email setup</li></ul>
+        <span class="pill-price">From 80 KWD / yr</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDING DEMOS -->
+<section class="pad" id="demos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Building Demos</span>
+      <h2>See our work <span class="grad-text">in motion.</span></h2>
+      <p>Real projects, real footage. A look at the digital solutions we build for clients across Kuwait.</p>
+    </div>
+    <div class="demos-grid">
+      <div class="demo reveal-v">
+        <video muted loop playsinline preload="metadata" poster="assets/building-demo-1-poster.jpg" data-autoplay>
+          <source src="assets/building-demo-1.mp4" type="video/mp4">
+        </video>
+        <span class="demo-tag"><span class="dot"></span>Hessah District — Aerial Showcase</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pad" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Transparent Pricing</span>
+      <h2>Clear prices, no surprises.</h2>
+      <p>Real Kuwait-market pricing in KWD. Pick a package below, or mix services for a custom quote. Every project includes a free consultation.</p>
+    </div>
+
+    <!-- Website packages -->
+    <h3 style="font-family:Poppins;font-weight:700;font-size:1.3rem;margin:0 0 22px;text-align:center" class="reveal">Website Packages</h3>
+    <div class="price-grid reveal">
+      <div class="plan">
+        <h4>Landing Page</h4>
+        <div class="amt">99<small> KWD</small></div>
+        <div class="from">One-time · single page</div>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>1 conversion-focused page</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Mobile responsive</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Contact form &amp; WhatsApp</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Basic SEO + analytics</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Delivery in 3–5 days</li>
+        </ul>
+        <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27m%20interested%20in%20the%20Landing%20Page%20package." target="_blank" rel="noopener" class="btn btn-ghost">Choose Landing</a>
+      </div>
+      <div class="plan feat-plan">
+        <div class="badge">Most Popular</div>
+        <h4>Business Website</h4>
+        <div class="amt">500<small> KWD</small></div>
+        <div class="from">One-time · up to 10 pages</div>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Up to 10 custom pages</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Arabic + English (RTL)</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>CMS — edit it yourself</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>SEO, blog &amp; Google Maps</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>1 month free support</li>
+        </ul>
+        <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27m%20interested%20in%20the%20Business%20Website%20package." target="_blank" rel="noopener" class="btn btn-primary">Choose Business</a>
+      </div>
+      <div class="plan">
+        <h4>E-Commerce Store</h4>
+        <div class="amt">1,500<small> KWD</small></div>
+        <div class="from">One-time · full online shop</div>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Unlimited products</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>KNET &amp; MyFatoorah checkout</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Full admin dashboard</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Orders, stock &amp; coupons</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Sales reports &amp; accounts</li>
+        </ul>
+        <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27m%20interested%20in%20the%20E-Commerce%20package." target="_blank" rel="noopener" class="btn btn-ghost">Choose Store</a>
+      </div>
+    </div>
+
+    <!-- Detailed price tables -->
+    <div class="cards c2" style="margin-top:32px">
+      <div class="reveal">
+        <h3 style="font-family:Poppins;font-weight:700;font-size:1.15rem;margin:14px 0 16px">Website &amp; Specialized Services</h3>
+        <table class="ptable">
+          <tr><th>Service</th><th>Price (KWD)</th></tr>
+          <tr><td>Landing Page / Microsite</td><td>99 – 300</td></tr>
+          <tr><td>Business / Corporate Website</td><td>250 – 900</td></tr>
+          <tr><td>E-Commerce Store</td><td>750 – 3,500</td></tr>
+          <tr><td>Admin Control Panel / Dashboard</td><td>from 850</td></tr>
+          <tr><td>Content Management System (CMS)</td><td>from 350</td></tr>
+          <tr><td>Booking / Reservation System</td><td>from 600</td></tr>
+          <tr><td>Web App / Customer Portal</td><td>from 2,500</td></tr>
+          <tr><td>Website Redesign</td><td>from 200</td></tr>
+          <tr><td>SEO Setup &amp; Optimization</td><td>from 120</td></tr>
+        </table>
+      </div>
+      <div class="reveal">
+        <h3 style="font-family:Poppins;font-weight:700;font-size:1.15rem;margin:14px 0 16px">Software, Apps &amp; Maintenance</h3>
+        <table class="ptable">
+          <tr><th>Service</th><th>Price (KWD)</th></tr>
+          <tr><td>Custom Software</td><td>from 3,000</td></tr>
+          <tr><td>Mobile App — single platform</td><td>from 2,500</td></tr>
+          <tr><td>Mobile App — iOS + Android</td><td>from 4,500</td></tr>
+          <tr><td>ERP / CRM / POS System</td><td>from 5,000</td></tr>
+          <tr><td>API &amp; Integrations</td><td>from 400</td></tr>
+          <tr><td>UI / UX Design</td><td>from 350</td></tr>
+          <tr><td>Maintenance — Basic / Standard / Premium</td><td>30 / 60 / 120 mo</td></tr>
+          <tr><td>Managed Hosting &amp; Domain</td><td>from 80 / yr</td></tr>
+          <tr><td>SSL Certificate</td><td>from 25 / yr</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Maintenance plans -->
+    <h3 style="font-family:Poppins;font-weight:700;font-size:1.3rem;margin:44px 0 22px;text-align:center" class="reveal">Maintenance &amp; Care Plans</h3>
+    <div class="price-grid reveal">
+      <div class="plan">
+        <h4>Basic Care</h4>
+        <div class="amt">30<small> KWD/mo</small></div>
+        <div class="from">Essential upkeep</div>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Security updates &amp; patches</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Monthly backups</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Uptime monitoring</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Minor fixes</li>
+        </ul>
+        <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27m%20interested%20in%20the%20Basic%20Care%20plan." target="_blank" rel="noopener" class="btn btn-ghost">Choose Basic</a>
+      </div>
+      <div class="plan feat-plan">
+        <div class="badge">Best Value</div>
+        <h4>Standard Care</h4>
+        <div class="amt">60<small> KWD/mo</small></div>
+        <div class="from">Most businesses</div>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Content &amp; image updates</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Weekly backups</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Priority WhatsApp support</li>
+        </ul>
+        <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27m%20interested%20in%20the%20Standard%20Care%20plan." target="_blank" rel="noopener" class="btn btn-primary">Choose Standard</a>
+      </div>
+      <div class="plan">
+        <h4>Premium Care</h4>
+        <div class="amt">120<small> KWD/mo</small></div>
+        <div class="from">High-traffic &amp; stores</div>
+        <ul class="feat">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Everything in Standard</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Unlimited small changes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Performance optimization</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Dedicated support line</li>
+        </ul>
+        <a href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27m%20interested%20in%20the%20Premium%20Care%20plan." target="_blank" rel="noopener" class="btn btn-ghost">Choose Premium</a>
+      </div>
+    </div>
+    <p class="price-note">All prices are in Kuwaiti Dinar (KWD) and reflect current Kuwait market rates. Final quotes depend on project scope &amp; features. Free consultation on every project.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="pad" id="process" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>From idea to launch in 4 steps.</h2>
+      <p>A simple, transparent process that keeps you informed at every stage.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h4>Discovery</h4><p>We learn your goals, audience and requirements — then plan features and scope together.</p></div>
+      <div class="step reveal"><div class="n">2</div><h4>Design</h4><p>We craft the UI/UX and share a design you approve before any development begins.</p></div>
+      <div class="step reveal"><div class="n">3</div><h4>Development</h4><p>We build, test and refine your solution with clean code and regular progress updates.</p></div>
+      <div class="step reveal"><div class="n">4</div><h4>Launch &amp; Care</h4><p>We deploy, train you on the admin panel, and provide ongoing maintenance and support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq reveal">
+      <details class="qa"><summary>How long does a website take?</summary><p>A landing page takes 3–5 days, a business website 1–3 weeks, and an e-commerce store or custom system 3–8 weeks depending on scope. We agree on a clear timeline before we start.</p></details>
+      <details class="qa"><summary>Do you build in both Arabic and English?</summary><p>Yes. Bilingual Arabic + English with proper right-to-left (RTL) layouts is standard on most projects, so you reach the whole Kuwait market.</p></details>
+      <details class="qa"><summary>Can I update the website myself afterwards?</summary><p>Absolutely. We integrate an easy admin panel / CMS and train you to add products, edit content and manage orders without any coding.</p></details>
+      <details class="qa"><summary>Do you handle payments like KNET?</summary><p>Yes — we integrate KNET, MyFatoorah and card payments so your customers can pay securely online.</p></details>
+      <details class="qa"><summary>What about hosting and the domain?</summary><p>We can fully manage hosting, your domain, business email and SSL, or deploy to your own accounts — whichever you prefer.</p></details>
+      <details class="qa"><summary>Are the prices fixed?</summary><p>The prices shown are real starting points for the Kuwait market. Your final quote depends on the exact features you need — and the consultation is always free.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's build something great.</h2>
+      <p>Tell us about your project and we'll get back to you with ideas and a free quote. Prefer to chat? Message us directly on WhatsApp.</p>
+      <a class="ci-row" href="tel:+96599079393"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="lbl">Call us</div><div class="val">+965 9907 9393</div></div></a>
+      <a class="ci-row" href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.042z"/></svg></div><div><div class="lbl">WhatsApp</div><div class="val">+965 9907 9393</div></div></a>
+      <a class="ci-row" href="mailto:ali.hayat@techlabskw.com"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div><div><div class="lbl">Email</div><div class="val">ali.hayat@techlabskw.com</div></div></a>
+      <a class="ci-row" href="https://techlabskw.com" target="_blank" rel="noopener" style="margin-bottom:0"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div><div><div class="lbl">Website</div><div class="val">techlabskw.com</div></div></a>
+    </div>
+    <form class="cform reveal" id="cform">
+      <div class="fg"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+      <div class="fg"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" placeholder="+965 ..." required></div>
+      <div class="fg"><label for="service">Service</label>
+        <select id="service" name="service">
+          <option>Business / Corporate Website</option>
+          <option>Landing Page</option>
+          <option>E-Commerce Store</option>
+          <option>Admin Dashboard / Control Panel</option>
+          <option>Booking / Reservation System</option>
+          <option>Web App / Portal</option>
+          <option>Mobile App</option>
+          <option>Custom Software (ERP/CRM/POS)</option>
+          <option>Maintenance &amp; Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg"><label for="msg">Project details</label><textarea id="msg" name="msg" placeholder="Tell us a little about what you need..."></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Enquiry via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="brand">
+          <svg class="mark" viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="fs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#e6ebf2"/><stop offset="1" stop-color="#b9c2cf"/></linearGradient>
+              <linearGradient id="fb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54a6ff"/><stop offset=".5" stop-color="#1f6dff"/><stop offset="1" stop-color="#0a4fd6"/></linearGradient>
+            </defs>
+            <g transform="translate(30,0) skewX(-7)">
+              <polygon fill="url(#fs)" points="28,28 158,28 158,58 112,58 112,205 78,205 78,58 28,58"/>
+              <polygon fill="url(#fb)" points="126,46 160,46 160,171 206,171 206,205 126,205"/>
+            </g>
+          </svg>
+          <span class="logo-word">TECH <b>LABS</b></span>
+        </a>
+        <p>Building digital solutions for Kuwait — custom software, websites, e-commerce and the admin tools to run them.</p>
+        <div class="socials">
+          <a href="https://instagram.com/techlabskw" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/96599079393" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24z"/></svg></a>
+          <a href="mailto:ali.hayat@techlabskw.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <a href="#web-services">Website Design</a>
+        <a href="#web-services">E-Commerce</a>
+        <a href="#web-services">Admin Dashboards</a>
+        <a href="#software">Custom Software</a>
+        <a href="#software">Mobile Apps</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:+96599079393">+965 9907 9393</a>
+        <a href="mailto:ali.hayat@techlabskw.com">ali.hayat@techlabskw.com</a>
+        <a href="https://wa.me/96599079393" target="_blank" rel="noopener">WhatsApp Chat</a>
+        <a href="https://techlabskw.com">techlabskw.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Tech Labs. All rights reserved.</span>
+      <span>Kuwait · Building Digital Solutions</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/96599079393?text=Hi%20Tech%20Labs%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.042z"/></svg>
+</a>
+
+<script>
+  // Nav scroll
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+  // Mobile menu
+  const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  // Year
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // Reveal on scroll
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal,.reveal-v').forEach(el=>io.observe(el));
+  // Play demo videos only while in view (smooth + saves bandwidth)
+  const vio=new IntersectionObserver((es)=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){const p=v.play();if(p)p.catch(()=>{});}else{v.pause();}}),{threshold:.35});
+  document.querySelectorAll('video[data-autoplay]').forEach(v=>vio.observe(v));
+  // Contact form -> WhatsApp
+  document.getElementById('cform').addEventListener('submit',function(e){
+    e.preventDefault();
+    const n=name.value,p=phone.value,s=service.value,m=msg.value;
+    const text=`Hi Tech Labs! 👋%0A%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AService: ${encodeURIComponent(s)}%0ADetails: ${encodeURIComponent(m)}`;
+    window.open(`https://wa.me/96599079393?text=${text}`,'_blank');
+  });
+</script>
+
+<!-- BILINGUAL EN/AR ENGINE -->
+<script>
+(function(){
+  var T = {
+    // Nav
+    "Services":"الخدمات","Web Design":"تصميم المواقع","Demos":"أعمالنا","Pricing":"الأسعار","Process":"آلية العمل","Contact":"تواصل","Get a Quote":"اطلب عرض سعر",
+    // Hero
+    "● Building Digital Solutions":"● نبني حلولاً رقمية",
+    "Custom Software & Websites,":"برمجيات ومواقع مخصّصة،",
+    "Engineered for Kuwait.":"مصمّمة خصيصاً للكويت.",
+    "Tech Labs designs and builds high-performance websites, e-commerce stores, admin dashboards and bespoke software that help Kuwait businesses grow — clean code, modern design, Arabic & English, and clear pricing.":"تصمّم Tech Labs وتُطوّر مواقع عالية الأداء ومتاجر إلكترونية ولوحات تحكم وبرمجيات مخصّصة تساعد شركات الكويت على النمو — بأكواد نظيفة وتصميم عصري ودعم كامل للعربية والإنجليزية وأسعار واضحة.",
+    "View Pricing & Services":"الأسعار والخدمات",
+    "Talk on WhatsApp":"تواصل عبر واتساب",
+    "Custom Software":"برمجيات مخصّصة","Website Design":"تصميم المواقع","Admin Dashboards":"لوحات التحكم","Mobile Apps":"تطبيقات الجوال","Maintenance":"الصيانة",
+    "E-Commerce & KNET":"التجارة الإلكترونية وكي‑نت","KWD":"د.ك",
+    // Stats
+    "Custom-built, no templates":"تصميم مخصّص بالكامل بلا قوالب","Bilingual & RTL ready":"لغتان ودعم الاتجاه من اليمين لليسار","Local payment integration":"ربط بوسائل الدفع المحلية","Support & maintenance":"دعم وصيانة",
+    // About
+    "About Tech Labs":"عن Tech Labs",
+    "A Kuwait software studio that builds":"استوديو برمجيات كويتي يبني",
+    "digital solutions that work.":"حلولاً رقمية فعّالة.",
+    "Tech Labs is a software and web development company based in Kuwait. We partner with startups, established businesses and entrepreneurs to turn ideas into reliable, beautifully designed digital products.":"Tech Labs شركة تطوير برمجيات ومواقع مقرّها الكويت. نتعاون مع الشركات الناشئة والمؤسسات القائمة ورواد الأعمال لتحويل الأفكار إلى منتجات رقمية موثوقة وأنيقة التصميم.",
+    "From a single landing page to a full e-commerce platform or a custom internal system, every project is built from scratch, optimized for speed and SEO, and made to look great on every device.":"من صفحة هبوط واحدة إلى متجر إلكتروني متكامل أو نظام داخلي مخصّص، يُبنى كل مشروع من الصفر ويُحسَّن للسرعة ومحركات البحث ويظهر بشكل رائع على كل الأجهزة.",
+    "Custom-built, not templated.":"تصميم مخصّص لا قوالب جاهزة.",
+    "Every solution is designed around your brand and your workflow.":"كل حل مصمّم حول علامتك التجارية وطريقة عملك.",
+    "Bilingual by default.":"لغتان بشكل افتراضي.",
+    "Full Arabic + English support with proper right-to-left layouts.":"دعم كامل للعربية والإنجليزية مع تخطيط صحيح من اليمين لليسار.",
+    "Local-ready.":"جاهز للسوق المحلي.",
+    "KNET & MyFatoorah payments, local hosting and WhatsApp integration.":"مدفوعات كي‑نت وماي فاتورة واستضافة محلية وربط واتساب.",
+    "Ongoing partnership.":"شراكة مستمرة.",
+    "We maintain, update and grow your product after launch.":"نتولّى الصيانة والتحديث وتطوير منتجك بعد الإطلاق.",
+    "Clean, modern code":"كود نظيف وعصري","Fast, secure and built to scale.":"سريع وآمن وقابل للتوسّع.",
+    "Powerful admin control":"لوحة تحكم قوية","Manage your whole site from one dashboard.":"أدر موقعك بالكامل من لوحة واحدة.",
+    "Secure & reliable":"آمن وموثوق","SSL, backups and monitoring included.":"شهادة SSL ونسخ احتياطي ومراقبة.",
+    "Real human support":"دعم بشري حقيقي","Reach us directly on WhatsApp, anytime.":"تواصل معنا مباشرة عبر واتساب في أي وقت.",
+    // Services pillars
+    "What We Do":"ماذا نقدّم","Two core services. Endless possibilities.":"خدمتان أساسيتان. إمكانيات لا حصر لها.",
+    "Everything Tech Labs offers falls under two pillars — bespoke software and the design, building & care of your web presence.":"كل ما تقدّمه Tech Labs يندرج تحت محورين — برمجيات مخصّصة، وتصميم وبناء ورعاية حضورك الرقمي.",
+    "Custom Software Design & Development":"تصميم وتطوير البرمجيات المخصّصة",
+    "Tailor-made software built around exactly how your business works — web apps, mobile apps, internal systems, automations and integrations.":"برمجيات مصمّمة تماماً وفق طريقة عمل نشاطك — تطبيقات ويب وجوال وأنظمة داخلية وأتمتة وتكاملات.",
+    "Bespoke web & mobile applications":"تطبيقات ويب وجوال مخصّصة","ERP, CRM & POS systems":"أنظمة ERP وCRM ونقاط بيع","API & third-party integrations":"تكاملات API وخدمات خارجية","UI/UX design & prototyping":"تصميم واجهات وتجربة المستخدم والنماذج الأولية",
+    "Explore software →":"استكشف البرمجيات →",
+    "Software Maintenance & Website Page Design":"صيانة البرمجيات وتصميم صفحات المواقع",
+    "The full website lifecycle — from a stunning, conversion-focused design to powerful admin control and ongoing maintenance that keeps everything fast and secure.":"دورة حياة الموقع كاملة — من تصميم مبهر يركّز على التحويل إلى لوحة تحكم قوية وصيانة مستمرة تُبقي كل شيء سريعاً وآمناً.",
+    "Business sites, landing pages & portals":"مواقع الأعمال وصفحات الهبوط والبوابات","E-commerce stores with admin dashboards":"متاجر إلكترونية مع لوحات تحكم","CMS & full admin control panels":"أنظمة إدارة محتوى ولوحات تحكم كاملة","Maintenance, hosting & security care":"صيانة واستضافة ورعاية أمنية",
+    "Explore web design →":"استكشف تصميم المواقع →",
+    // Web services
+    "Website Design Services":"خدمات تصميم المواقع","Every type of website, explained in detail.":"كل أنواع المواقع، مشروحة بالتفصيل.",
+    "We don't just \"make websites.\" Here is exactly what each website service includes — so you know precisely what you're getting.":"نحن لا \"نصنع مواقع\" فحسب. إليك بالضبط ما تتضمّنه كل خدمة — لتعرف تماماً ما الذي ستحصل عليه.",
+    "Business & Corporate Websites":"مواقع الشركات والأعمال","From 250 KWD":"من 250 د.ك",
+    "A polished, multi-page website that represents your company professionally — Home, About, Services, Portfolio and Contact — designed to build trust and turn visitors into customers. Fully responsive, SEO-optimized and bilingual.":"موقع أنيق متعدّد الصفحات يمثّل شركتك باحترافية — الرئيسية، من نحن، الخدمات، الأعمال، والتواصل — مصمّم لبناء الثقة وتحويل الزوار إلى عملاء. متجاوب بالكامل ومحسّن لمحركات البحث وثنائي اللغة.",
+    "Custom multi-page design (5–15+ pages)":"تصميم مخصّص متعدّد الصفحات (5–15+ صفحة)","Mobile, tablet & desktop responsive":"متجاوب مع الجوال والتابلت والكمبيوتر","Arabic + English with RTL layout":"عربي وإنجليزي مع تخطيط من اليمين لليسار","On-page SEO & Google indexing":"تحسين محركات البحث وفهرسة جوجل","Contact forms & WhatsApp integration":"نماذج تواصل وربط واتساب","Google Maps & social links":"خرائط جوجل وروابط التواصل",
+    "Landing Pages & Microsites":"صفحات الهبوط والمواقع المصغّرة","From 99 KWD":"من 99 د.ك",
+    "A single, high-converting page built around one goal — a product launch, campaign, event or lead capture. Fast-loading, persuasive and optimized to turn clicks from ads into real enquiries.":"صفحة واحدة عالية التحويل مبنية حول هدف واحد — إطلاق منتج أو حملة أو فعالية أو جمع العملاء المحتملين. سريعة التحميل ومقنعة ومحسّنة لتحويل نقرات الإعلانات إلى استفسارات حقيقية.",
+    "Conversion-focused single page":"صفحة واحدة تركّز على التحويل","Lead-capture form & click-to-call":"نموذج لجمع العملاء وزر اتصال مباشر","Built for ad campaigns (Meta / Google)":"مهيّأة لحملات الإعلانات (ميتا / جوجل)","Analytics & pixel tracking ready":"جاهزة للتحليلات وتتبّع البكسل",
+    "E-Commerce Stores":"المتاجر الإلكترونية","From 750 KWD":"من 750 د.ك",
+    "A complete online shop where customers browse, add to cart and pay securely. Includes product catalog, inventory, secure checkout with KNET / MyFatoorah, order tracking and a full admin dashboard to run your store.":"متجر إلكتروني متكامل يتصفّح فيه العملاء ويضيفون للسلة ويدفعون بأمان. يشمل كتالوج منتجات وإدارة مخزون ودفعاً آمناً عبر كي‑نت / ماي فاتورة وتتبّع الطلبات ولوحة تحكم كاملة لإدارة متجرك.",
+    "Product catalog with categories & search":"كتالوج منتجات مع تصنيفات وبحث","Cart, secure checkout & KNET payments":"سلة ودفع آمن ومدفوعات كي‑نت","Coupons, discounts & delivery options":"كوبونات وخصومات وخيارات توصيل","Order management & stock control":"إدارة الطلبات والمخزون","Customer accounts & order history":"حسابات العملاء وسجل الطلبات","Sales reports & analytics dashboard":"تقارير مبيعات ولوحة تحليلات",
+    "Admin Control Panels & Dashboards":"لوحات التحكم والإدارة","From 850 KWD":"من 850 د.ك",
+    "The command center behind your website — a secure, easy-to-use admin panel where you control everything without touching code. Add or edit content and products, view and process orders, manage users with role-based permissions, and monitor performance with live analytics.":"مركز القيادة خلف موقعك — لوحة تحكم آمنة وسهلة تدير كل شيء دون لمس الأكواد. أضِف أو عدّل المحتوى والمنتجات، واعرض الطلبات وعالِجها، وأدر المستخدمين بصلاحيات محدّدة، وراقب الأداء بتحليلات مباشرة.",
+    "Add / edit / delete content & products":"إضافة / تعديل / حذف المحتوى والمنتجات","Order & enquiry management":"إدارة الطلبات والاستفسارات","User roles & permission control":"أدوار المستخدمين والتحكم بالصلاحيات","Live analytics & reporting dashboards":"لوحات تحليلات وتقارير مباشرة","Inventory & data tables with search/filter":"جداول مخزون وبيانات مع بحث وتصفية","Activity logs & secure login":"سجل النشاط وتسجيل دخول آمن",
+    "Content Management Systems (CMS)":"أنظمة إدارة المحتوى (CMS)","From 350 KWD":"من 350 د.ك",
+    "Update your own website any time — no developer needed. We integrate a friendly CMS so you can edit text, swap images, publish blog posts and add new pages yourself, with changes going live instantly.":"حدّث موقعك في أي وقت — دون الحاجة لمطوّر. ندمج نظام إدارة محتوى سهلاً لتعدّل النصوص وتبدّل الصور وتنشر المقالات وتضيف صفحات جديدة بنفسك، مع ظهور التغييرات فوراً.",
+    "Edit text & images yourself":"عدّل النصوص والصور بنفسك","Blog / news publishing":"نشر المدونة والأخبار","Add & reorder pages":"إضافة الصفحات وإعادة ترتيبها","Media library & SEO fields":"مكتبة وسائط وحقول SEO",
+    "Booking & Reservation Systems":"أنظمة الحجز والمواعيد","From 600 KWD":"من 600 د.ك",
+    "Let customers book appointments, tables or services online around the clock. Includes a live calendar, time-slot availability, automated confirmations and optional online payment — perfect for clinics, salons, restaurants and service businesses.":"دع عملاءك يحجزون المواعيد أو الطاولات أو الخدمات عبر الإنترنت على مدار الساعة. يشمل تقويماً مباشراً وتوفّر المواعيد وتأكيدات تلقائية ودفعاً إلكترونياً اختيارياً — مثالي للعيادات والصالونات والمطاعم وشركات الخدمات.",
+    "Live calendar & availability":"تقويم مباشر وتوفّر المواعيد","Automated SMS / email confirmations":"تأكيدات تلقائية بالرسائل والبريد","Online deposits & payments":"دفعات وعرابين إلكترونية","Admin booking management":"إدارة الحجوزات من اللوحة",
+    "Web Applications & Customer Portals":"تطبيقات الويب وبوابات العملاء","From 2,500 KWD":"من 2,500 د.ك",
+    "Software that lives in the browser — secure login accounts, personalized dashboards and custom workflows built around your business. Ideal for membership portals, internal tools, SaaS products and client management systems.":"برمجيات تعمل داخل المتصفح — حسابات دخول آمنة ولوحات مخصّصة وسير عمل مبني حول نشاطك. مثالي لبوابات الأعضاء والأدوات الداخلية ومنتجات SaaS وأنظمة إدارة العملاء.",
+    "Secure user accounts & logins":"حسابات مستخدمين وتسجيل دخول آمن","Personalized user dashboards":"لوحات مخصّصة لكل مستخدم","Custom business logic & workflows":"منطق عمل وسير عمل مخصّص","Database & API integrations":"تكاملات قواعد بيانات وAPI",
+    "Website Maintenance & Care":"صيانة ورعاية المواقع","From 30 KWD / mo":"من 30 د.ك / شهر",
+    "Keep your website fast, secure and up-to-date. Our care plans cover updates, security patches, backups, performance monitoring and content changes — so your site keeps running while you focus on business.":"أبقِ موقعك سريعاً وآمناً ومحدّثاً. تغطّي باقات الرعاية التحديثات والترقيعات الأمنية والنسخ الاحتياطي ومراقبة الأداء وتغييرات المحتوى — ليستمر موقعك بالعمل بينما تركّز على نشاطك.",
+    "Security updates & patches":"تحديثات وترقيعات أمنية","Regular backups & monitoring":"نسخ احتياطي ومراقبة منتظمة","Content & image updates":"تحديث المحتوى والصور","Speed & uptime optimization":"تحسين السرعة ووقت التشغيل",
+    // Software section
+    "Custom Software & Development":"البرمجيات المخصّصة والتطوير",
+    "Software built around":"برمجيات مبنية حول","your business.":"نشاطك التجاري.",
+    "When off-the-shelf tools don't fit, we build exactly what you need — from mobile apps to enterprise systems.":"حين لا تناسبك الأدوات الجاهزة، نبني لك ما تحتاجه تماماً — من تطبيقات الجوال إلى أنظمة المؤسسات.",
+    "Bespoke desktop & web software designed around your exact processes, data and team.":"برمجيات سطح مكتب وويب مصمّمة حول عملياتك وبياناتك وفريقك بالضبط.",
+    "Built to your workflow":"مبنية وفق سير عملك","Scalable & secure":"قابلة للتوسّع وآمنة","From 3,000 KWD":"من 3,000 د.ك",
+    "Native-quality iOS & Android apps with smooth UX, push notifications and offline support.":"تطبيقات iOS وأندرويد بجودة أصلية مع تجربة سلسة وإشعارات ودعم دون اتصال.",
+    "iOS & Android":"iOS وأندرويد","App Store deployment":"نشر على المتاجر","From 2,500 KWD":"من 2,500 د.ك",
+    "ERP / CRM / POS":"ERP / CRM / نقاط البيع",
+    "Enterprise systems to manage sales, inventory, customers and operations in one place.":"أنظمة مؤسسية لإدارة المبيعات والمخزون والعملاء والعمليات في مكان واحد.",
+    "Inventory & sales":"المخزون والمبيعات","Dashboards & reports":"لوحات وتقارير","From 5,000 KWD":"من 5,000 د.ك",
+    "API & Integrations":"الـ API والتكاملات",
+    "Connect your tools — payments, delivery, WhatsApp, accounting and third-party services.":"اربط أدواتك — المدفوعات والتوصيل وواتساب والمحاسبة والخدمات الخارجية.",
+    "Payment & delivery APIs":"واجهات دفع وتوصيل","Automations":"أتمتة","From 400 KWD":"من 400 د.ك",
+    "UI / UX Design":"تصميم الواجهات والتجربة",
+    "Beautiful, intuitive interfaces and prototypes — designed before a line of code is written.":"واجهات ونماذج جميلة وبديهية — تُصمّم قبل كتابة سطر برمجي واحد.",
+    "Wireframes & prototypes":"مخططات ونماذج أولية","Brand-aligned design":"تصميم متوافق مع الهوية","From 350 KWD":"من 350 د.ك",
+    "Hosting & Domains":"الاستضافة والنطاقات",
+    "Reliable hosting, domain setup, business email and SSL — fully managed for you.":"استضافة موثوقة وإعداد نطاق وبريد أعمال وشهادة SSL — مُدارة بالكامل لك.",
+    "Managed hosting & SSL":"استضافة مُدارة وSSL","Business email setup":"إعداد بريد الأعمال","From 80 KWD / yr":"من 80 د.ك / سنة",
+    // Demos
+    "Building Demos":"نماذج من أعمالنا","See our work":"شاهد أعمالنا","in motion.":"في حركة.",
+    "Real projects, real footage. A look at the digital solutions we build for clients across Kuwait.":"مشاريع حقيقية ولقطات حقيقية. نظرة على الحلول الرقمية التي نبنيها لعملائنا في الكويت.",
+    "Hessah District — Aerial Showcase":"حي حصة — عرض جوي",
+    // Pricing
+    "Transparent Pricing":"أسعار شفّافة","Clear prices, no surprises.":"أسعار واضحة، بلا مفاجآت.",
+    "Real Kuwait-market pricing in KWD. Pick a package below, or mix services for a custom quote. Every project includes a free consultation.":"أسعار حقيقية للسوق الكويتي بالدينار. اختر باقة أدناه أو ادمج الخدمات للحصول على عرض مخصّص. كل مشروع يشمل استشارة مجانية.",
+    "Website Packages":"باقات المواقع",
+    "Landing Page":"صفحة هبوط","One-time · single page":"دفعة واحدة · صفحة واحدة",
+    "1 conversion-focused page":"صفحة واحدة تركّز على التحويل","Mobile responsive":"متجاوبة مع الجوال","Contact form & WhatsApp":"نموذج تواصل وواتساب","Basic SEO + analytics":"SEO أساسي وتحليلات","Delivery in 3–5 days":"التسليم خلال 3–5 أيام","Choose Landing":"اختر صفحة الهبوط",
+    "Most Popular":"الأكثر طلباً","Business Website":"موقع أعمال","One-time · up to 10 pages":"دفعة واحدة · حتى 10 صفحات",
+    "Up to 10 custom pages":"حتى 10 صفحات مخصّصة","Arabic + English (RTL)":"عربي وإنجليزي (RTL)","CMS — edit it yourself":"نظام إدارة — عدّله بنفسك","SEO, blog & Google Maps":"SEO ومدونة وخرائط جوجل","1 month free support":"دعم مجاني لمدة شهر","Choose Business":"اختر موقع الأعمال",
+    "E-Commerce Store":"متجر إلكتروني","One-time · full online shop":"دفعة واحدة · متجر متكامل",
+    "Unlimited products":"منتجات غير محدودة","KNET & MyFatoorah checkout":"دفع كي‑نت وماي فاتورة","Full admin dashboard":"لوحة تحكم كاملة","Orders, stock & coupons":"طلبات ومخزون وكوبونات","Sales reports & accounts":"تقارير مبيعات وحسابات","Choose Store":"اختر المتجر",
+    "Website & Specialized Services":"المواقع والخدمات المتخصّصة","Service":"الخدمة","Price (KWD)":"السعر (د.ك)",
+    "Landing Page / Microsite":"صفحة هبوط / موقع مصغّر","Business / Corporate Website":"موقع أعمال / شركة","Admin Control Panel / Dashboard":"لوحة تحكم / إدارة","Content Management System (CMS)":"نظام إدارة محتوى (CMS)","Booking / Reservation System":"نظام حجوزات / مواعيد","Web App / Customer Portal":"تطبيق ويب / بوابة عملاء","Website Redesign":"إعادة تصميم موقع","SEO Setup & Optimization":"إعداد وتحسين SEO",
+    "from 850":"من 850","from 350":"من 350","from 600":"من 600","from 2,500":"من 2,500","from 200":"من 200","from 120":"من 120",
+    "Software, Apps & Maintenance":"البرمجيات والتطبيقات والصيانة",
+    "Mobile App — single platform":"تطبيق جوال — منصة واحدة","Mobile App — iOS + Android":"تطبيق جوال — iOS وأندرويد","ERP / CRM / POS System":"نظام ERP / CRM / نقاط بيع","Maintenance — Basic / Standard / Premium":"الصيانة — أساسية / قياسية / متميّزة","Managed Hosting & Domain":"استضافة مُدارة ونطاق","SSL Certificate":"شهادة SSL",
+    "from 3,000":"من 3,000","from 4,500":"من 4,500","from 5,000":"من 5,000","from 400":"من 400","from 350":"من 350","30 / 60 / 120 mo":"30 / 60 / 120 شهرياً","from 80 / yr":"من 80 / سنة","from 25 / yr":"من 25 / سنة",
+    "Maintenance & Care Plans":"باقات الصيانة والرعاية",
+    "Basic Care":"الرعاية الأساسية","KWD/mo":"د.ك/شهر","Essential upkeep":"صيانة أساسية","Monthly backups":"نسخ احتياطي شهري","Uptime monitoring":"مراقبة وقت التشغيل","Minor fixes":"إصلاحات بسيطة","Choose Basic":"اختر الأساسية",
+    "Best Value":"أفضل قيمة","Standard Care":"الرعاية القياسية","Most businesses":"لمعظم الأنشطة","Everything in Basic":"كل ما في الأساسية","Weekly backups":"نسخ احتياطي أسبوعي","Priority WhatsApp support":"دعم واتساب ذو أولوية","Choose Standard":"اختر القياسية",
+    "Premium Care":"الرعاية المتميّزة","High-traffic & stores":"للمواقع عالية الزيارات والمتاجر","Everything in Standard":"كل ما في القياسية","Unlimited small changes":"تعديلات صغيرة غير محدودة","Performance optimization":"تحسين الأداء","Dedicated support line":"خط دعم مخصّص","Choose Premium":"اختر المتميّزة",
+    "All prices are in Kuwaiti Dinar (KWD) and reflect current Kuwait market rates. Final quotes depend on project scope & features. Free consultation on every project.":"جميع الأسعار بالدينار الكويتي (د.ك) وتعكس أسعار السوق الحالية. تعتمد العروض النهائية على نطاق المشروع ومزاياه. استشارة مجانية لكل مشروع.",
+    // Process
+    "How We Work":"كيف نعمل","From idea to launch in 4 steps.":"من الفكرة إلى الإطلاق في 4 خطوات.",
+    "A simple, transparent process that keeps you informed at every stage.":"آلية بسيطة وشفّافة تُبقيك على اطّلاع في كل مرحلة.",
+    "Discovery":"الاكتشاف","We learn your goals, audience and requirements — then plan features and scope together.":"نفهم أهدافك وجمهورك ومتطلباتك — ثم نخطّط للمزايا والنطاق معاً.",
+    "Design":"التصميم","We craft the UI/UX and share a design you approve before any development begins.":"نصمّم الواجهة والتجربة ونشاركك تصميماً تعتمده قبل بدء أي تطوير.",
+    "Development":"التطوير","We build, test and refine your solution with clean code and regular progress updates.":"نبني ونختبر ونحسّن الحل بكود نظيف وتحديثات دورية عن التقدّم.",
+    "Launch & Care":"الإطلاق والرعاية","We deploy, train you on the admin panel, and provide ongoing maintenance and support.":"نطلق الموقع وندرّبك على لوحة التحكم ونوفّر صيانة ودعماً مستمرين.",
+    // FAQ
+    "Questions, answered.":"إجابات لأسئلتك.",
+    "How long does a website take?":"كم يستغرق إنشاء الموقع؟","A landing page takes 3–5 days, a business website 1–3 weeks, and an e-commerce store or custom system 3–8 weeks depending on scope. We agree on a clear timeline before we start.":"تستغرق صفحة الهبوط 3–5 أيام، وموقع الأعمال 1–3 أسابيع، والمتجر الإلكتروني أو النظام المخصّص 3–8 أسابيع حسب النطاق. نتّفق على جدول زمني واضح قبل البدء.",
+    "Do you build in both Arabic and English?":"هل تبنون بالعربية والإنجليزية معاً؟","Yes. Bilingual Arabic + English with proper right-to-left (RTL) layouts is standard on most projects, so you reach the whole Kuwait market.":"نعم. دعم لغتين عربي وإنجليزي مع تخطيط صحيح من اليمين لليسار (RTL) هو المعيار في معظم المشاريع، لتصل إلى كامل السوق الكويتي.",
+    "Can I update the website myself afterwards?":"هل أستطيع تحديث الموقع بنفسي لاحقاً؟","Absolutely. We integrate an easy admin panel / CMS and train you to add products, edit content and manage orders without any coding.":"بالتأكيد. ندمج لوحة تحكم / نظام إدارة سهلاً وندرّبك على إضافة المنتجات وتعديل المحتوى وإدارة الطلبات دون أي برمجة.",
+    "Do you handle payments like KNET?":"هل تتعاملون مع وسائل الدفع مثل كي‑نت؟","Yes — we integrate KNET, MyFatoorah and card payments so your customers can pay securely online.":"نعم — ندمج كي‑نت وماي فاتورة والبطاقات ليدفع عملاؤك بأمان عبر الإنترنت.",
+    "What about hosting and the domain?":"ماذا عن الاستضافة والنطاق؟","We can fully manage hosting, your domain, business email and SSL, or deploy to your own accounts — whichever you prefer.":"يمكننا إدارة الاستضافة والنطاق وبريد الأعمال وشهادة SSL بالكامل، أو النشر على حساباتك الخاصة — كما تفضّل.",
+    "Are the prices fixed?":"هل الأسعار ثابتة؟","The prices shown are real starting points for the Kuwait market. Your final quote depends on the exact features you need — and the consultation is always free.":"الأسعار المعروضة نقاط بداية حقيقية للسوق الكويتي. يعتمد عرضك النهائي على المزايا التي تحتاجها — والاستشارة مجانية دائماً.",
+    // Contact
+    "Get In Touch":"تواصل معنا","Let's build something great.":"لنبنِ شيئاً رائعاً.",
+    "Tell us about your project and we'll get back to you with ideas and a free quote. Prefer to chat? Message us directly on WhatsApp.":"أخبرنا عن مشروعك وسنعود إليك بأفكار وعرض سعر مجاني. تفضّل المحادثة؟ راسلنا مباشرة على واتساب.",
+    "Call us":"اتصل بنا","Email":"البريد الإلكتروني","Website":"الموقع",
+    "Name":"الاسم","Phone / WhatsApp":"الهاتف / واتساب","Project details":"تفاصيل المشروع","Send Enquiry via WhatsApp":"أرسل الاستفسار عبر واتساب",
+    "Business / Corporate Website":"موقع أعمال / شركة","Admin Dashboard / Control Panel":"لوحة تحكم / إدارة","Web App / Portal":"تطبيق ويب / بوابة","Mobile App":"تطبيق جوال","Custom Software (ERP/CRM/POS)":"برمجيات مخصّصة (ERP/CRM/POS)","Maintenance & Support":"صيانة ودعم","Other":"أخرى",
+    // Footer
+    "Building digital solutions for Kuwait — custom software, websites, e-commerce and the admin tools to run them.":"نبني حلولاً رقمية للكويت — برمجيات مخصّصة ومواقع ومتاجر إلكترونية وأدوات الإدارة لتشغيلها.",
+    "E-Commerce":"التجارة الإلكترونية","Company":"الشركة","About":"من نحن","FAQ":"الأسئلة الشائعة","WhatsApp Chat":"محادثة واتساب",
+    "Tech Labs. All rights reserved.":"Tech Labs. جميع الحقوق محفوظة.","Kuwait · Building Digital Solutions":"الكويت · نبني حلولاً رقمية"
+  };
+  var PH = { "Your name":"اسمك","Tell us a little about what you need...":"أخبرنا قليلاً عمّا تحتاجه..." };
+  var TITLE_EN = document.title;
+  var TITLE_AR = "Tech Labs | تصميم وتطوير البرمجيات والمواقع في الكويت";
+  var root = document.documentElement, toggle = document.getElementById('langToggle');
+
+  var nodes = [];
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: function(n){
+      if(!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      var p = n.parentNode && n.parentNode.nodeName;
+      if(p==='SCRIPT'||p==='STYLE') return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  while(walker.nextNode()){ var nd=walker.currentNode; nd.__en=nd.nodeValue; nodes.push(nd); }
+  var phEls = [].slice.call(document.querySelectorAll('input[placeholder],textarea[placeholder]'));
+  phEls.forEach(function(el){ el.__ph = el.getAttribute('placeholder'); });
+
+  function setLang(lang){
+    var ar = lang==='ar';
+    root.setAttribute('lang', ar?'ar':'en');
+    root.setAttribute('dir', ar?'rtl':'ltr');
+    document.title = ar?TITLE_AR:TITLE_EN;
+    nodes.forEach(function(n){
+      var raw=n.__en, key=raw.trim().replace(/‑/g,'-').replace(/ /g,' ');
+      if(ar && T[key]!==undefined){
+        n.nodeValue = raw.match(/^\s*/)[0] + T[key] + raw.match(/\s*$/)[0];
+      } else { n.nodeValue = raw; }
+    });
+    phEls.forEach(function(el){
+      var k=el.__ph; el.setAttribute('placeholder', (ar&&PH[k]!==undefined)?PH[k]:k);
+    });
+    toggle.textContent = ar?'EN':'العربية';
+    try{ localStorage.setItem('tl_lang', lang); }catch(e){}
+  }
+  toggle.addEventListener('click', function(){ setLang(root.getAttribute('lang')==='ar'?'en':'ar'); });
+  var saved; try{ saved=localStorage.getItem('tl_lang'); }catch(e){}
+  if(saved==='ar') setLang('ar');
+})();
+</script>
+</body>
+</html>

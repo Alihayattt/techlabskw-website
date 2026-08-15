@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" width="280" height="240" role="img" aria-label="Tech Labs monogram">
+  <defs>
+    <linearGradient id="tlSilver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#e6ebf2"/>
+      <stop offset="1" stop-color="#b9c2cf"/>
+    </linearGradient>
+    <linearGradient id="tlBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#54a6ff"/>
+      <stop offset="0.5" stop-color="#1f6dff"/>
+      <stop offset="1" stop-color="#0a4fd6"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(30,0) skewX(-7)">
+    <!-- T -->
+    <polygon fill="url(#tlSilver)" points="28,28 158,28 158,58 112,58 112,205 78,205 78,58 28,58"/>
+    <!-- L -->
+    <polygon fill="url(#tlBlue)" points="126,46 160,46 160,171 206,171 206,205 126,205"/>
+  </g>
+</svg>
